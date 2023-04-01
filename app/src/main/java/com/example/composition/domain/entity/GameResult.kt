@@ -5,9 +5,14 @@ import kotlinx.parcelize.Parcelize
 import java.io.Serializable
 
 @Parcelize
-data class GameResult (
+data class GameResult(
     val winner: Boolean,
     val countOfRightAnswers: Int,
     val countOfQuestions: Int,
-    val gameSettings: GameSettings
-        ) : Parcelable
+    val gameSettings: GameSettings,
+) : Parcelable {
+    val countOfRightAnswersString: String
+        get() = countOfRightAnswers.toString()
+    val countOfQuestionsString: String
+        get() = countOfQuestions.toString()
+}
